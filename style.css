@@ -236,3 +236,128 @@ header {
         display: flex; /* Ensures horizontal navigation on desktop */
     }
 }
+  /* ==========================================================================
+   1. FLUID BASE LAYOUT (Applies to all screens)
+   ========================================================================== */
+
+/* Use box-sizing border-box globally so padding doesn't break your widths */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Ensure images never overflow their containers and scale fluidly */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Set up a fluid container for your main content */
+main {
+    width: 90%;
+    max-width: 1200px; /* Limits the width on ultra-wide desktop monitors */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* The parent wrapper holding both your Profile Card and the About Cards */
+.about-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile devices by default */
+    gap: 20px; /* Fluid spacing between items */
+}
+
+/* Make your cards look consistent and fluid */
+.profile-card, .card {
+    width: 100%; /* Spans full width of the container on small screens */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* ==========================================================================
+   2. MOBILE VIEW (Up to 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Hamburger Menu Toggle Logic */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust depending on your header's actual height */
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+    /* Shows the menu when JavaScript toggles the class */
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
+
+/* ==========================================================================
+   3. TABLET & SMALL LAPTOP VIEW (769px to 1024px)
+   ========================================================================== */
+@media (min-width: 769px) {
+    /* Hide hamburger and show normal navigation */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Convert container to a fluid side-by-side layout */
+    .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    /* Side profile card takes up roughly 30% of the screen width */
+    .profile-card {
+        flex: 1; 
+        max-width: 320px;
+        position: sticky; /* Keeps your profile card visible as they scroll */
+        top: 20px;
+    }
+
+    /* The content cards block takes up the remaining 70% of the screen */
+    .about-content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   4. LARGE LAPTOPS & DESKTOPS (1025px and up)
+   ========================================================================== */
+@media (min-width: 1025px) {
+    /* Slightly increase the gap spacing and padding on large screens for a cleaner look */
+    .about-container {
+        gap: 40px;
+    }
+    
+    .about-content {
+        gap: 30px;
+    }
+}
