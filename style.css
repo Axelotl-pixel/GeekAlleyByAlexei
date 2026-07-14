@@ -143,6 +143,15 @@ header {
   transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 16px;
+}
+
 .card:hover,
 .profile-card:hover {
   transform: translateY(-4px);
