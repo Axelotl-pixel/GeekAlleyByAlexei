@@ -4,100 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeekAlley | About the Programmer</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
-    <nav class="navbar" aria-label="Primary Navigation">
-        <div class="logo">GeekAlley</div>
-<!-- Hero Introduction Section -->
-<section class="hero-intro">
-  <div class="hero-content">
-    <h1 class="hero-title">Welcome to Geek Alley</h1>
-    <p class="hero-subtitle">Your cozy digital corner for tech insights, creative tools, and curated geek culture. Step in, explore, and make yourself at home.</p>
-    <div class="hero-actions">
-      <a href="#explore" class="btn-primary">Explore Alley</a>
-      <a href="#about" class="btn-secondary-outline">About Me</a>
-    </div>
-  </div>
-</section>
-        
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-        <ul class="nav-links">
-            <!-- If this file is saved as index.html, Home is the active page -->
+    <nav class="navbar">
+
+        <div class="logo">
+            GeekAlley
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
             <li><a href="index.html" class="active">Home</a></li>
+
             <li><a href="calculator.html">Calculator</a></li>
+
             <li><a href="diameter.html">Diameter</a></li>
+
             <li><a href="area.html">Area</a></li>
+
             <li><a href="volume.html">Volume</a></li>
+
             <li><a href="perimeter.html">Perimeter</a></li>
+
             <li><a href="about.html">About</a></li>
+
         </ul>
+
     </nav>
+
 </header>
 
+<!-- HERO -->
+
+<section class="hero-intro">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to GeekAlley
+        </h1>
+
+        <p>
+
+            Your cozy digital corner for tech insights,
+            creative tools, mathematical calculators,
+            and everything geeky.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#about" class="btn">
+                About Me
+            </a>
+
+            <a href="calculator.html" class="btn-outline">
+                Explore
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
 <main>
-    <section class="page-title">
-        <h1>About the Programmer</h1>
-        <p>Meet the creator of GeekAlley.</p>
-    </section>
 
-    <section class="about-container">
-        <!-- Changed aside to div because the profile is central to the page's main content -->
-        <div class="profile-card">
-            <img src="img/profile.jpg" alt="Zelene Alexei P. Egao" class="profile-img">
+<section class="page-title">
 
-            <!-- Demoted to h3 for proper semantic heading structure -->
-            <h3>Zelene Alexei P. Egao</h3>
-            
-            <div class="profile-details">
-                <p><strong>Grade &amp; Section:</strong><br>Grade 10 - STE Albert Einstein</p>
-                <p><strong>School:</strong><br>Manolo Fortich National High School</p>
-            </div>
-        </div>
+<h1>
+About the Programmer
+</h1>
 
-        <div class="about-content">
-            <article class="card">
-                <h2>Short Biography</h2>
-                <p>
-                    Hello! I am a student at MFNHS who is currently learning web development
-                    and programming. This website was created as a school project to demonstrate
-                    the use of HTML, CSS, and JavaScript in building an interactive mathematics website.
-                </p>
-            </article>
+<p>
+Meet the creator of GeekAlley.
+</p>
 
-            <article class="card">
-                <h2>Skills Learned</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS Styling</li>
-                    <li>UX/UI Designing</li>
-                    <li>JavaScript Functions</li>
-                    <li>User Input Handling</li>
-                    <li>Mathematical Computations</li>
-                </ul>
-            </article>
+</section>
 
-            <article class="card">
-                <h2>Reflection</h2>
-                <p>
-                    Developing GeekAlley helped me improve my understanding of creating responsive
-                    websites while applying JavaScript to solve real-world mathematical problems.
-                    Throughout this project, I became more confident in organizing multiple web pages,
-                    linking them together, and creating reusable styles and scripts. This experience
-                    strengthened my programming skills and encouraged me to continue learning web development.
-                </p>
-            </article>
-        </div>
-    </section>
+<section class="about-container">
+
+<div class="profile-card">
+
+<img
+src="img/profile.jpg"
+alt="Profile Picture"
+class="profile-img"
+>
+
+<h2>
+Zelene Alexei P. Egao
+</h2>
+
+<p>
+
+<strong>Grade & Section</strong><br>
+Grade 10 – STE Albert Einstein
+
+</p>
+
+<p>
+
+<strong>School</strong><br>
+
+Manolo Fortich National High School
+
+</p>
+
+</div>
+
+<div class="about-content">
+
+<div class="card">
+
+<h2>
+Short Biography
+</h2>
+
+<p>
+
+Hello! I am a student of
+Manolo Fortich National High School.
+This website was built as a school
+project to demonstrate HTML,
+CSS, and JavaScript while creating
+an interactive mathematics website.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+Skills Learned
+
+</h2>
+
+<ul>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+<li>Responsive Web Design</li>
+
+<li>User Interface Design</li>
+
+<li>Mathematical Computation</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+Reflection
+
+</h2>
+
+<p>
+
+Developing GeekAlley improved my
+knowledge of responsive web design,
+JavaScript programming,
+and user-friendly interfaces.
+
+It also helped me organize multiple
+pages into one complete website.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
 
 <footer>
-    <p>&copy; 2026 GeekAlley By Alexei. All Rights Reserved.</p>
+
+<p>
+
+© 2026 GeekAlley by Alexei.
+All Rights Reserved.
+
+</p>
+
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
