@@ -1,80 +1,97 @@
-// ======================
-// AREA CALCULATORS
-// ======================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeekAlley | Area</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">GeekAlley</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="diameter.html">Diameter</a></li>
+        <li><a href="area.html" class="active">Area</a></li>
+        <li><a href="volume.html">Volume</a></li>
+        <li><a href="perimeter.html">Perimeter</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-function rectangleArea() {
-    const length = parseFloat(document.getElementById("rectLength").value);
-    const width = parseFloat(document.getElementById("rectWidth").value);
+  <section class="page-title">
+    <h1>Area Calculators</h1>
+    <p>Calculate the area of different geometric figures using their formulas.</p>
+  </section>
 
-    if (isNaN(length) || isNaN(width)) {
-        document.getElementById("rectangleAreaResult").innerHTML = "Answer: Please enter valid numbers.";
-        return;
-    }
+  <div class="calculator-grid">
+    <!-- Rectangle -->
+    <div class="card">
+      <h2>Rectangle</h2>
+      <p><strong>Formula:</strong> A = Length × Width</p>
+      <input type="number" id="rectLength" placeholder="Length">
+      <input type="number" id="rectWidth" placeholder="Width">
+      <button onclick="rectangleArea()">Solve</button>
+      <p id="rectangleAreaResult">Answer:</p>
+    </div>
 
-    document.getElementById("rectangleAreaResult").innerHTML =
-        "Answer: " + (length * width).toFixed(2);
-}
+    <!-- Square -->
+    <div class="card">
+      <h2>Square</h2>
+      <p><strong>Formula:</strong> A = Side²</p>
+      <input type="number" id="squareSide" placeholder="Side">
+      <button onclick="squareArea()">Solve</button>
+      <p id="squareAreaResult">Answer:</p>
+    </div>
 
-function squareArea() {
-    const side = parseFloat(document.getElementById("squareSide").value);
+    <!-- Triangle -->
+    <div class="card">
+      <h2>Triangle</h2>
+      <p><strong>Formula:</strong> A = (Base × Height) ÷ 2</p>
+      <input type="number" id="triangleBase" placeholder="Base">
+      <input type="number" id="triangleHeight" placeholder="Height">
+      <button onclick="triangleArea()">Solve</button>
+      <p id="triangleAreaResult">Answer:</p>
+    </div>
 
-    if (isNaN(side)) {
-        document.getElementById("squareAreaResult").innerHTML = "Answer: Please enter a valid number.";
-        return;
-    }
+    <!-- Circle -->
+    <div class="card">
+      <h2>Circle</h2>
+      <p><strong>Formula:</strong> A = πr²</p>
+      <input type="number" id="circleRadiusArea" placeholder="Radius">
+      <button onclick="circleArea()">Solve</button>
+      <p id="circleAreaResult">Answer:</p>
+    </div>
 
-    document.getElementById("squareAreaResult").innerHTML =
-        "Answer: " + (side * side).toFixed(2);
-}
+    <!-- Parallelogram -->
+    <div class="card">
+      <h2>Parallelogram</h2>
+      <p><strong>Formula:</strong> A = Base × Height</p>
+      <input type="number" id="paraBase" placeholder="Base">
+      <input type="number" id="paraHeight" placeholder="Height">
+      <button onclick="parallelogramArea()">Solve</button>
+      <p id="parallelogramAreaResult">Answer:</p>
+    </div>
 
-function triangleArea() {
-    const base = parseFloat(document.getElementById("triangleBase").value);
-    const height = parseFloat(document.getElementById("triangleHeight").value);
+    <!-- Trapezoid -->
+    <div class="card">
+      <h2>Trapezoid</h2>
+      <p><strong>Formula:</strong> A = ((a + b) × h) ÷ 2</p>
+      <input type="number" id="trapBase1" placeholder="Base 1">
+      <input type="number" id="trapBase2" placeholder="Base 2">
+      <input type="number" id="trapHeight" placeholder="Height">
+      <button onclick="trapezoidArea()">Solve</button>
+      <p id="trapezoidAreaResult">Answer:</p>
+    </div>
+  </div>
 
-    if (isNaN(base) || isNaN(height)) {
-        document.getElementById("triangleAreaResult").innerHTML = "Answer: Please enter valid numbers.";
-        return;
-    }
+  <footer>
+    <p>&copy; 2026 GeekAlley. All Rights Reserved.</p>
+  </footer>
 
-    document.getElementById("triangleAreaResult").innerHTML =
-        "Answer: " + ((base * height) / 2).toFixed(2);
-}
-
-function circleArea() {
-    const radius = parseFloat(document.getElementById("circleRadiusArea").value);
-
-    if (isNaN(radius)) {
-        document.getElementById("circleAreaResult").innerHTML = "Answer: Please enter a valid number.";
-        return;
-    }
-
-    document.getElementById("circleAreaResult").innerHTML =
-        "Answer: " + (Math.PI * radius * radius).toFixed(2);
-}
-
-function parallelogramArea() {
-    const base = parseFloat(document.getElementById("paraBase").value);
-    const height = parseFloat(document.getElementById("paraHeight").value);
-
-    if (isNaN(base) || isNaN(height)) {
-        document.getElementById("parallelogramAreaResult").innerHTML = "Answer: Please enter valid numbers.";
-        return;
-    }
-
-    document.getElementById("parallelogramAreaResult").innerHTML =
-        "Answer: " + (base * height).toFixed(2);
-}
-
-function trapezoidArea() {
-    const a = parseFloat(document.getElementById("trapBase1").value);
-    const b = parseFloat(document.getElementById("trapBase2").value);
-    const h = parseFloat(document.getElementById("trapHeight").value);
-
-    if (isNaN(a) || isNaN(b) || isNaN(h)) {
-        document.getElementById("trapezoidAreaResult").innerHTML = "Answer: Please enter valid numbers.";
-        return;
-    }
-
-    document.getElementById("trapezoidAreaResult").innerHTML =
-        "Answer: " + (((a + b) * h) / 2).toFixed(2);
-}
+  <script src="script.js"></script>
+</body>
+</html>
