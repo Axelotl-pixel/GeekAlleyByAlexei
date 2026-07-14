@@ -361,3 +361,94 @@ main {
         gap: 30px;
     }
 }
+
+/* ==========================================================================
+   HERO INTRODUCTION SECTION
+   ========================================================================== */
+.hero-intro {
+  width: 100%;
+  max-width: 1200px;
+  margin: var(--space-xxl) auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  text-align: center;
+}
+
+.hero-content {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 48px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-title {
+  font-family: "Aroma Vintage", cursive;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--primary-dark);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl) auto;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+/* Button UI Components */
+.btn-primary, 
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform var(--transition), background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-outline {
+  background-color: transparent;
+  color: var(--primary-dark);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary-outline:hover {
+  background-color: #fff3f6;
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Adjust layout spacing on small viewports */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  .btn-primary, 
+  .btn-secondary-outline {
+    width: 100%;
+  }
+}
+  
