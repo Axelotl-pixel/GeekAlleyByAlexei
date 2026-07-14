@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeekAlley | About</title>
+    <title>GeekAlley | About the Programmer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,13 +15,14 @@
         <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <!-- If this file is saved as index.html, Home is the active page -->
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="calculator.html">Calculator</a></li>
             <li><a href="diameter.html">Diameter</a></li>
             <li><a href="area.html">Area</a></li>
             <li><a href="volume.html">Volume</a></li>
             <li><a href="perimeter.html">Perimeter</a></li>
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </nav>
 </header>
@@ -33,18 +34,18 @@
     </section>
 
     <section class="about-container">
-        <aside class="profile-card">
-            <img src="img/profile.jpg" alt="Programmer Picture" class="profile-img">
+        <!-- Changed aside to div because the profile is central to the page's main content -->
+        <div class="profile-card">
+            <img src="img/profile.jpg" alt="Zelene Alexei P. Egao" class="profile-img">
 
-            <h2>Full Name</h2>
-            <p><strong>Zelene Alexei P. Egao</strong></p>
-
-            <p><strong>Grade &amp; Section:</strong></p>
-            <p>Grade 10 - STE Albert Einstein</p>
-
-            <p><strong>School:</strong></p>
-            <p>Manolo Fortich National High School</p>
-        </aside>
+            <!-- Demoted to h3 for proper semantic heading structure -->
+            <h3>Zelene Alexei P. Egao</h3>
+            
+            <div class="profile-details">
+                <p><strong>Grade &amp; Section:</strong><br>Grade 10 - STE Albert Einstein</p>
+                <p><strong>School:</strong><br>Manolo Fortich National High School</p>
+            </div>
+        </div>
 
         <div class="about-content">
             <article class="card">
