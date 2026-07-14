@@ -1,454 +1,499 @@
-@font-face {
-  font-family: "Aroma Vintage";
-  src: url("fonts/Aroma Vintage.ttf") format("truetype");
+/* ===============================
+   GEEKALLEY RESPONSIVE STYLESHEET
+================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+--primary:#f8a9bc;
+--secondary:#db7093;
+--dark:#b93f6f;
+--light:#fff8fb;
+--white:#ffffff;
+--text:#333;
+--shadow:0 8px 20px rgba(0,0,0,.08);
+
 }
 
-:root {
-  --primary: #f8a9bc;
-  --primary-hover: #f394ad;
-  --primary-dark: #b93f6f;
-  --secondary: #db7093;
-  --bg-gradient: linear-gradient(135deg, #ffffff 0%, #fff3f6 100%);
-  --surface: #ffffff;
-  --surface-hover: #fffafb;
-  --text-main: #2d2527;
-  --text-muted: #6b5a5f;
-  --border-color: #f4d5de;
-
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-xxl: 48px;
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-
-  --shadow-sm: 0 2px 8px rgba(219, 112, 147, 0.08);
-  --shadow-md: 0 8px 24px rgba(219, 112, 147, 0.12);
-  --shadow-lg: 0 16px 36px rgba(219, 112, 147, 0.16);
-
-  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html{
+scroll-behavior:smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+body{
+
+font-family:"Poppins",sans-serif;
+background:#fff6fa;
+color:var(--text);
+line-height:1.6;
+
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  color: var(--text-main);
-  background: var(--bg-gradient);
-  min-height: 100vh;
-  line-height: 1.6;
-  font-size: 1rem;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+img{
+max-width:100%;
+display:block;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+a{
+text-decoration:none;
+color:inherit;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ===============================
+HEADER
+================================== */
+
+header{
+
+position:sticky;
+top:0;
+z-index:999;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 240, 245, 0.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+.navbar{
+
+max-width:1200px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px 25px;
+
+position:relative;
+
 }
 
-.navbar,
-.hero,
-.about-container,
-.cards,
-.calculator-grid,
-.page-title {
-  width: min(92%, 1200px);
-  margin: 0 auto;
+.logo{
+
+font-size:2rem;
+font-weight:700;
+color:var(--dark);
+
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md) 0;
-  flex-wrap: wrap;
+.nav-links{
+
+display:flex;
+list-style:none;
+gap:20px;
+
 }
 
-.logo {
-  font-family: "Aroma Vintage", cursive;
-  font-size: clamp(1.8rem, 2vw + 1rem, 2.5rem);
-  color: var(--primary-dark);
-  font-weight: 400;
-  letter-spacing: 0.02em;
+.nav-links li a{
+
+padding:10px 16px;
+border-radius:8px;
+transition:.3s;
+
 }
 
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  color: var(--primary-dark);
-  box-shadow: none;
-  padding: 8px 12px;
-  border: 0;
+.nav-links li a:hover,
+.nav-links .active{
+
+background:var(--primary);
+color:white;
+
 }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  list-style: none;
+.hamburger{
+
+display:none;
+
+font-size:30px;
+background:none;
+border:none;
+cursor:pointer;
+color:var(--dark);
+
 }
 
-.nav-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  color: var(--text-muted);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+/* ===============================
+HERO
+================================== */
+
+.hero-intro{
+
+padding:80px 20px;
+
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  background: #ffe3ee;
-  color: var(--primary-dark);
+.hero-content{
+
+max-width:1000px;
+margin:auto;
+
+background:white;
+
+padding:60px 40px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
 }
 
-.page-title {
-  text-align: center;
-  padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-xl);
+.hero-content h1{
+
+font-size:3rem;
+color:var(--dark);
+
+margin-bottom:20px;
+
 }
 
-.page-title h1 {
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  color: var(--primary-dark);
-  margin-bottom: var(--space-sm);
+.hero-content p{
+
+font-size:1.1rem;
+
+margin-bottom:30px;
+
+color:#555;
+
 }
 
-.page-title p {
-  color: var(--text-muted);
+.hero-buttons{
+
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+
 }
 
-.hero,
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-  margin: var(--space-xl) auto;
+.btn,
+.btn-outline{
+
+padding:14px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+transition:.3s;
+
 }
 
-.about-content {
-  flex: 1;
-  display: grid;
-  gap: var(--space-lg);
+.btn{
+
+background:var(--secondary);
+color:white;
+
 }
 
-.cards,
-.calculator-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-lg);
-  margin: var(--space-xl) auto;
+.btn:hover{
+
+background:var(--dark);
+
 }
 
-.card,
-.profile-card {
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: clamp(20px, 3vw, 32px);
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+.btn-outline{
+
+border:2px solid var(--secondary);
+
+color:var(--secondary);
+
 }
 
-.profile-card {
-  text-align: center;
-  min-width: 280px;
+.btn-outline:hover{
+
+background:var(--secondary);
+color:white;
+
 }
 
-.profile-img {
-  width: clamp(110px, 18vw, 160px);
-  height: clamp(110px, 18vw, 160px);
-  object-fit: cover;
-  object-position: center;
+/* ===============================
+PAGE TITLE
+================================== */
 
-  /* Mobile Styles (Screens under 768px) */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Ensures the hamburger icon is visible */
-        cursor: pointer;
-    }
+.page-title{
 
-    .nav-links {
-        display: none; /* Hides the navbar links by default */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust based on your header height */
-        left: 0;
-        background-color: #fff; /* Matches your background color */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-    }
+text-align:center;
 
-    /* When the menu has the 'open' class, show the links */
-    .nav-links.open {
-        display: flex;
-    }
+padding:50px 20px;
 
-    .nav-links li {
-        text-align: center;
-        margin: 15px 0;
-    }
 }
 
-/* Desktop Styles (Screens 769px and above) */
-@media (min-width: 769px) {
-    .hamburger {
-        display: none; /* Hides the hamburger button on desktop */
-    }
+.page-title h1{
 
-    .nav-links {
-        display: flex; /* Ensures horizontal navigation on desktop */
-    }
-}
-  /* ==========================================================================
-   1. FLUID BASE LAYOUT (Applies to all screens)
-   ========================================================================== */
+font-size:2.5rem;
 
-/* Use box-sizing border-box globally so padding doesn't break your widths */
-*, *::before, *::after {
-    box-sizing: border-box;
+color:var(--dark);
+
 }
 
-/* Ensure images never overflow their containers and scale fluidly */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.page-title p{
+
+margin-top:10px;
+
 }
 
-/* Set up a fluid container for your main content */
-main {
-    width: 90%;
-    max-width: 1200px; /* Limits the width on ultra-wide desktop monitors */
-    margin: 0 auto;
-    padding: 20px 0;
+/* ===============================
+ABOUT
+================================== */
+
+.about-container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:20px;
+
+display:flex;
+
+gap:30px;
+
+align-items:flex-start;
+
 }
 
-/* The parent wrapper holding both your Profile Card and the About Cards */
-.about-container {
-    display: flex;
-    flex-direction: column; /* Stack vertically on mobile devices by default */
-    gap: 20px; /* Fluid spacing between items */
+.profile-card{
+
+flex:1;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
 }
 
-/* Make your cards look consistent and fluid */
-.profile-card, .card {
-    width: 100%; /* Spans full width of the container on small screens */
-    padding: 20px;
-    border-radius: 8px;
+.profile-img{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin:auto;
+
+margin-bottom:20px;
+
+border:5px solid var(--primary);
+
 }
 
+.about-content{
 
-/* ==========================================================================
-   2. MOBILE VIEW (Up to 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-    /* Hamburger Menu Toggle Logic */
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
+flex:2;
 
-    .nav-links {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust depending on your header's actual height */
-        left: 0;
-        background-color: #fff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        z-index: 100;
-    }
+display:flex;
 
-    /* Shows the menu when JavaScript toggles the class */
-    .nav-links.open {
-        display: flex;
-    }
+flex-direction:column;
 
-    .nav-links li {
-        text-align: center;
-        margin: 15px 0;
-    }
+gap:25px;
+
 }
 
+.card{
 
-/* ==========================================================================
-   3. TABLET & SMALL LAPTOP VIEW (769px to 1024px)
-   ========================================================================== */
-@media (min-width: 769px) {
-    /* Hide hamburger and show normal navigation */
-    .hamburger {
-        display: none;
-    }
+background:white;
 
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
+padding:30px;
 
-    /* Convert container to a fluid side-by-side layout */
-    .about-container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
+border-radius:20px;
 
-    /* Side profile card takes up roughly 30% of the screen width */
-    .profile-card {
-        flex: 1; 
-        max-width: 320px;
-        position: sticky; /* Keeps your profile card visible as they scroll */
-        top: 20px;
-    }
+box-shadow:var(--shadow);
 
-    /* The content cards block takes up the remaining 70% of the screen */
-    .about-content {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+transition:.3s;
+
 }
 
+.card:hover{
 
-/* ==========================================================================
-   4. LARGE LAPTOPS & DESKTOPS (1025px and up)
-   ========================================================================== */
-@media (min-width: 1025px) {
-    /* Slightly increase the gap spacing and padding on large screens for a cleaner look */
-    .about-container {
-        gap: 40px;
-    }
-    
-    .about-content {
-        gap: 30px;
-    }
+transform:translateY(-5px);
+
 }
 
-/* ==========================================================================
-   HERO INTRODUCTION SECTION
-   ========================================================================== */
-.hero-intro {
-  width: 100%;
-  max-width: 1200px;
-  margin: var(--space-xxl) auto;
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
-  text-align: center;
+.card h2{
+
+color:var(--dark);
+
+margin-bottom:15px;
+
 }
 
-.hero-content {
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 48px);
-  box-shadow: var(--shadow-md);
+.card ul{
+
+padding-left:20px;
+
 }
 
-.hero-title {
-  font-family: "Aroma Vintage", cursive;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  color: var(--primary-dark);
-  line-height: 1.2;
-  margin-bottom: var(--space-md);
+/* ===============================
+FOOTER
+================================== */
+
+footer{
+
+margin-top:50px;
+
+background:var(--dark);
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: var(--text-muted);
-  max-width: 700px;
-  margin: 0 auto var(--space-xl) auto;
+/* ===============================
+TABLET
+================================== */
+
+@media(max-width:992px){
+
+.about-container{
+
+flex-direction:column;
+
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-md);
+.profile-card{
+
+width:100%;
+
 }
 
-/* Button UI Components */
-.btn-primary, 
-.btn-secondary-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 28px;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform var(--transition), background-color var(--transition), border-color var(--transition), color var(--transition);
+.hero-content h1{
+
+font-size:2.5rem;
+
 }
 
-.btn-primary {
-  background-color: var(--secondary);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm);
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-2px);
+/* ===============================
+MOBILE
+================================== */
+
+@media(max-width:768px){
+
+.hamburger{
+
+display:block;
+
 }
 
-.btn-secondary-outline {
-  background-color: transparent;
-  color: var(--primary-dark);
-  border: 2px solid var(--border-color);
+.nav-links{
+
+display:none;
+
+flex-direction:column;
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+padding:20px;
+
 }
 
-.btn-secondary-outline:hover {
-  background-color: #fff3f6;
-  border-color: var(--secondary);
-  transform: translateY(-2px);
+.nav-links.show{
+
+display:flex;
+
 }
 
-/* Adjust layout spacing on small viewports */
-@media (max-width: 480px) {
-  .hero-actions {
-    flex-direction: column;
-  }
-  .btn-primary, 
-  .btn-secondary-outline {
-    width: 100%;
-  }
+.nav-links li{
+
+text-align:center;
+
+margin:10px 0;
+
 }
-  
+
+.hero-content{
+
+padding:40px 25px;
+
+}
+
+.hero-content h1{
+
+font-size:2rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn,
+.btn-outline{
+
+width:100%;
+
+}
+
+.page-title h1{
+
+font-size:2rem;
+
+}
+
+.profile-img{
+
+width:140px;
+height:140px;
+
+}
+
+}
+
+/* ===============================
+SMALL PHONES
+================================== */
+
+@media(max-width:480px){
+
+.logo{
+
+font-size:1.6rem;
+
+}
+
+.hero-content{
+
+padding:30px 20px;
+
+}
+
+.hero-content h1{
+
+font-size:1.7rem;
+
+}
+
+}
