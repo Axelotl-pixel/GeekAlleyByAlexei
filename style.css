@@ -195,3 +195,44 @@ header {
   height: clamp(110px, 18vw, 160px);
   object-fit: cover;
   object-position: center;
+
+  /* Mobile Styles (Screens under 768px) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Ensures the hamburger icon is visible */
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Hides the navbar links by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        background-color: #fff; /* Matches your background color */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+
+    /* When the menu has the 'open' class, show the links */
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
+/* Desktop Styles (Screens 769px and above) */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hides the hamburger button on desktop */
+    }
+
+    .nav-links {
+        display: flex; /* Ensures horizontal navigation on desktop */
+    }
+}
