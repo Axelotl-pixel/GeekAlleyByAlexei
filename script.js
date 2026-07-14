@@ -1,13 +1,9 @@
-/*================================= GEEKALLEY SCRIPT.JS =================================*/
 const PI = Math.PI;
-
-/*================================= AREA PAGE CALCULATORS =================================*/
 
 // Rectangle
 function rectangleArea() {
   let l = parseFloat(document.getElementById("rectLength").value);
   let w = parseFloat(document.getElementById("rectWidth").value);
-  
   if (isNaN(l) || isNaN(w)) {
     document.getElementById("rectangleAreaResult").innerHTML = "Answer: Please enter valid numbers.";
     return;
@@ -18,7 +14,6 @@ function rectangleArea() {
 // Square
 function squareArea() {
   let side = parseFloat(document.getElementById("squareSide").value);
-  
   if (isNaN(side)) {
     document.getElementById("squareAreaResult").innerHTML = "Answer: Please enter a valid number.";
     return;
@@ -30,7 +25,6 @@ function squareArea() {
 function triangleArea() {
   let base = parseFloat(document.getElementById("triangleBase").value);
   let height = parseFloat(document.getElementById("triangleHeight").value);
-  
   if (isNaN(base) || isNaN(height)) {
     document.getElementById("triangleAreaResult").innerHTML = "Answer: Please enter valid numbers.";
     return;
@@ -41,7 +35,6 @@ function triangleArea() {
 // Circle
 function circleArea() {
   let radius = parseFloat(document.getElementById("circleRadiusArea").value);
-  
   if (isNaN(radius)) {
     document.getElementById("circleAreaResult").innerHTML = "Answer: Please enter a valid number.";
     return;
@@ -53,7 +46,6 @@ function circleArea() {
 function parallelogramArea() {
   let base = parseFloat(document.getElementById("paraBase").value);
   let height = parseFloat(document.getElementById("paraHeight").value);
-  
   if (isNaN(base) || isNaN(height)) {
     document.getElementById("parallelogramAreaResult").innerHTML = "Answer: Please enter valid numbers.";
     return;
@@ -66,7 +58,6 @@ function trapezoidArea() {
   let a = parseFloat(document.getElementById("trapBase1").value);
   let b = parseFloat(document.getElementById("trapBase2").value);
   let h = parseFloat(document.getElementById("trapHeight").value);
-  
   if (isNaN(a) || isNaN(b) || isNaN(h)) {
     document.getElementById("trapezoidAreaResult").innerHTML = "Answer: Please enter valid numbers.";
     return;
